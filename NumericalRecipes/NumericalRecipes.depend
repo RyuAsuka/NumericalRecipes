@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1426683062 source:f:\programme\c_plusplus\numericalrecipes\tests\main.c
+	"../NumericalRecipes/matrix.h"
+	<stdio.h>
+
+1426680065 f:\programme\c_plusplus\numericalrecipes\numericalrecipes\matrix.h
+	"../common/nrutil.h"
+	<math.h>
+
+1426678026 f:\programme\c_plusplus\numericalrecipes\common\nrutil.h
+
+1426680340 source:f:\programme\c_plusplus\numericalrecipes\numericalrecipes\matrix.c
+	"matrix.h"
+
+1426681188 source:f:\programme\c_plusplus\numericalrecipes\common\nrutil.c
+	<stdio.h>
+	<stddef.h>
+	<stdlib.h>
+	"nrutil.h"
+
