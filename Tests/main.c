@@ -9,15 +9,18 @@ float** make_ans(float **m, int nrl, int nrh, int ncl, int nch, float* p);
 int main(void)
 {
     int n;
+    int *indx = ivector(1,n);
+    float d;
     printf("Please input matrix's size:");
     scanf("%d",&n);
     float **m = matrix(1,n,1,n);
-    float *p = vector(1,n);
+    //float *p = vector(1,n);
     input_matrix(m,1,n,1,n);
-    choldc(m, n, p);
-    float** ans = make_ans(m,1,n,1,n,p);
-    printf("Cholesky factorization answer is: \n");
-    output_matrix(ans,1,n,1,n);
+    //choldc(m, n, p);
+    //float** ans = make_ans(m,1,n,1,n,p);
+    //printf("Cholesky factorization answer is: \n");
+    ludcmp(m,n,indx,&d);
+    output_matrix(m,1,n,1,n);
     return 0;
 }
 
