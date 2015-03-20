@@ -1,3 +1,13 @@
+/**************************
+ * nrutil.h
+ *
+ * Definitions of some basic macros and functions.
+ * Functions of creation of matrix and vectors.
+ *
+ * Author: Mao Jiewen
+ * Date: 2015-3-18
+ *
+ ***************************/
 #ifndef _NR_UTILS_H_
 #define _NR_UTILS_H_
 

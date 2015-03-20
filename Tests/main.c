@@ -1,3 +1,12 @@
+/**************************
+ * main.c
+ *
+ * Testing program of my functions
+ *
+ * Author: Mao Jiewen
+ * Date: 2015-3-19
+ *
+ ***************************/
 #include "../NumericalRecipes/matrix.h"
 #include <stdio.h>
 
@@ -9,14 +18,21 @@ float** make_ans(float **m, int nrl, int nrh, int ncl, int nch, float* p);
 int main(void)
 {
     int n;
-    printf("Please input matrix's size:");
+    float **m, **ans;
+    float *p;
+
+    printf("Please input matrix's size: ");
     scanf("%d",&n);
-    float **m = matrix(1,n,1,n);
-    float *p = vector(1,n);
+    m = matrix(1,n,1,n);
+    p = vector(1,n);
+
+    printf("\nPlease input matrix's elements:\n");
     input_matrix(m,1,n,1,n);
+
     choldc(m, n, p);
-    float** ans = make_ans(m,1,n,1,n,p);
-    printf("Cholesky factorization answer is: \n");
+    ans = make_ans(m,1,n,1,n,p);
+
+    printf("\nCholesky factorization answer is: \n");
     output_matrix(ans,1,n,1,n);
     return 0;
 }

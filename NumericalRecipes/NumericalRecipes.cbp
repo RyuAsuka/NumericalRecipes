@@ -31,10 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Tests/main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../common/nrutil.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../common/nrutil.h" />
+		<Unit filename="matrix.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="matrix.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

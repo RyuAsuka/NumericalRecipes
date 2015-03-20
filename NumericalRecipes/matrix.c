@@ -1,7 +1,16 @@
+/**************************
+ * matrix.c
+ *
+ * Implements of functions in matrix.h
+ *
+ * Author: Mao Jiewen
+ * Date: 2015-3-19
+ *
+ ***************************/
 #include "matrix.h"
 
 /**
-  Cholesky Factorization
+  Cholesky Factorization Implementation
 **/
 void choldc(float **a, int n, float p[])
 {
@@ -16,7 +25,7 @@ void choldc(float **a, int n, float p[])
             if(i == j)
             {
                 if(sum <= 0.0)
-                    nrerror("choldc failed.");
+                    nrerror("The matrix is not a positive definite matrix! ");
                 p[i] = sqrt(sum);
             }
             else

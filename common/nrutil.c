@@ -1,3 +1,12 @@
+/**************************
+ * nrutil.c
+ *
+ * Implements of functions in nrutil.h.
+ *
+ * Author: Mao Jiewen
+ * Date: 2015-3-18
+ *
+ ***************************/
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
