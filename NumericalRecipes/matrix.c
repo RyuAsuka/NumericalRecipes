@@ -91,3 +91,58 @@ void ludcmp(float **a, int n, int* indx, float* d)
     }
     free_vector(vv,1,n);
 }
+
+void lubksb(float **a, int n, int* indx, float b[])
+{
+    int i, ii=0, ip, j;
+    float sum;
+
+    for(i = 1; i <= n; i++)
+    {
+        ip = indx[i];
+        sum = b[ip];
+        b[ip] = b[i];
+        if(ii)
+            for(j == ii; j <= i - 1; j++)
+                sum -= a[i][j]*b[j];
+        else if(sum) ii = i;
+        b[i] = sum;
+    }
+    for(i = n; i >= 1; i--)
+    {
+        sum = b[i];
+        for(j = i+1; j <= n; j++)
+            sum -= a[i][j]*b[i];
+        b[i] = sum/a[i][i];
+    }
+}
+
+float** inverse(float **a, int n, int* indx, float d)
+{
+    float **y = matrix(1,n,1,n);
+    float* col = vector(1,n);
+    int i,j;
+
+    ludcmp(a,n,indx,&d);
+    for(j = 1; j <= n; j++)
+    {
+        for(i=1; i <= n; i++) col[i] = 0.0;
+        col[j] = 1.0;
+        lubksb(a,n,indx,col);
+        for(i = 1; i <= n; i++)
+            y[i][j] = col[i];
+    }
+
+    return y;
+}
+
+float det(float** a, int n, int* indx, float d)
+{
+    int i;
+
+    ludcmp(a, n, indx, &d);
+    for(i = 1; i <= n; i++)
+        d *= a[i][i];
+
+    return d;
+}
